@@ -28,9 +28,6 @@
     #about .container{
         padding-top: 50px;
     }
-    .nomer{
-        display: none;
-    }
     .about-col i{
         font-size: 60px;
     }
@@ -67,7 +64,7 @@
     .left-form p{
         font-size: 14px;
     }
-    form button{
+    .btn{
         font-size: 14px;
     }
     h4{
@@ -102,14 +99,6 @@
     }
     h2,h3,h4,h5{
         font-size: 30px;
-    }
-    .img-video{
-        width: 100%;
-        max-width: 500px;
-        height: 400px;
-    }
-    .icon-play{
-        font-size: 60px;
     }
     .soc-icon a{
         margin-left: 15px;
@@ -226,9 +215,6 @@
     .contact p, .contact a{
         font-size: 14px;
     }
-    .img-video{
-        height: 350px;
-    }
     .form2-col.col-25{
         width: 50%;
     }
@@ -251,9 +237,6 @@
     .mlcont{
         margin-left: 0;
         margin-top: 10px;
-    }
-    .img-video{
-        height: 280px;
     }
     #form-questions .form2-col.col-25, .form2-col.col-25.contacts{
         width: 100%;

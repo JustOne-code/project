@@ -23,7 +23,7 @@ let m=document.getElementById("m");
 let s=document.getElementById("s");
 
 
-setInterval(tic,1000);
+//setInterval(tic,1000);
 
 
 function tic(){
@@ -53,14 +53,94 @@ function tic(){
   s.innerHTML=sec+"сек. ";
 }
 function toggleMenu(event){
-  console.log(event.target.tagName);
   document.body.classList.toggle("activemenu");
 }
 function toggleMenu2(event){
-  console.log(event.target.tagName);
   if (event.target.tagName=="A")
     document.body.classList.toggle("activemenu");
 }
 document.getElementsByClassName("menu-block")[0].addEventListener("click", toggleMenu2);
 document.getElementsByClassName("btnmenu")[0].addEventListener("click", toggleMenu);
 document.getElementsByClassName("closeblock")[0].addEventListener("click", toggleMenu);
+
+document.querySelector(".login a[href='#signin']").addEventListener("click", toggleModalSigIn);
+function toggleModalSigIn(event){
+  toggleModal('signin');
+  return false;
+}
+
+document.querySelector(".login a[href='#register']").addEventListener("click", toggleModalRegister);
+function toggleModalRegister(event){
+  toggleModal('register');
+  return false;
+}
+
+document.getElementsByClassName("closeblock2")[0].addEventListener("click", closeModals);
+function closeModals(event){
+  toggleModal();
+  return false;
+}
+
+function toggleModal(idModal=null){
+  document.body.classList.toggle("openmodal");
+  if (idModal)
+    document.body.classList.toggle('open'+idModal);
+  else {
+    if (document.body.classList.contains('opensignin'))
+      document.body.classList.remove('opensignin');
+    if (document.body.classList.contains('openregister'))
+      document.body.classList.remove('openregister');
+  }
+}
+
+document.querySelectorAll(".modal .btn")[0].addEventListener("click", authUser);
+document.querySelectorAll(".modal .btn")[1].addEventListener("click", authUser);
+function authUser(event){
+  form=event.target.closest("form");
+  login=form.querySelector("input[name='login']").value;
+  pass=form.querySelector("input[name='pass']").value;
+  passObj=form.querySelector("input[name='pass2']");
+  if (passObj)
+    pass2=passObj.value;
+  else pass2="notreg";
+  if (login && pass && pass2){
+    form.classList.remove('showerror');
+    toggleModal();
+    document.cookie = "login="+login+"; path=/";
+    setAuth(login);
+  } else{
+    form.classList.add('showerror');
+  }
+  return false;
+}
+
+function getCookie(name) {
+  let matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+function setAuth(login=null){
+  loginuser=document.getElementById("loginuser");
+  if (!login){
+    login=getCookie('login');
+    if (!login){
+      login='';
+      document.body.classList.remove('auth');
+    }
+  }
+  if (login!=''){
+    document.body.classList.add('auth');
+  }
+  loginuser.innerHTML=login;
+}
+
+document.querySelector("a[href='#logout']").addEventListener("click", logout);
+function logout(event){
+  document.cookie = "login=; path=/";
+  setAuth();
+  return false;
+}
+
+setAuth();
