@@ -95,7 +95,7 @@
         height: 180px;
     }
     .lofts-col p{
-        font-size: 20px;
+        font-size: 16px;
     }
     h2,h3,h4,h5{
         font-size: 30px;
@@ -187,8 +187,8 @@
     header .container > .row{
         justify-content: center;
     }
-    header .container > .row .logo{
-        margin-top: -10px;
+    header{
+        padding-top: 0;
     }
     body{
         font-size: 14px;
