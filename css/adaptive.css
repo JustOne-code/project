@@ -25,7 +25,7 @@
     #begin{
         min-height: 375px;
     }
-    #about .container{
+    #about .container, #aboutapp .container{
         padding-top: 50px;
     }
     .about-col i{
@@ -44,15 +44,13 @@
         padding-bottom: 50px;
     }
     .grad {
-        padding-bottom: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 15px;
     }
     .imgloft{
         height: 260px;
     }
     .lofts-col p{
-        font-size: 20px;
+        font-size: 18px;
     }
     #form{
         padding-top: 50px;
@@ -68,7 +66,6 @@
         font-size: 14px;
     }
     h4{
-        padding-top: 90px;
         padding-bottom: 50px;
     }
     .form-maps, #form-questions form{
@@ -80,6 +77,9 @@
     }
     .form2-col{
         margin-top: 30px;
+    }
+    .slide{
+        height: 300px;
     }
 }
 
@@ -95,7 +95,7 @@
         height: 180px;
     }
     .lofts-col p{
-        font-size: 16px;
+        font-size: 14px;
     }
     h2,h3,h4,h5{
         font-size: 30px;
@@ -117,6 +117,16 @@
     }
     .menu-item{
         margin-left: 16px;
+    }
+    #aboutapp .col-50{
+        width: 100%;
+    }
+    .infoapp{
+        order: -1;
+        padding-bottom: 50px;
+    }
+    .slide{
+        height: 400px;
     }
 }
 
@@ -226,6 +236,13 @@
     }
     .banner-tick samp{
         font-size: 3em;
+    }
+    .slide{
+        height: 250px;
+    }
+    .btnslide{
+        width: 40px;
+        height: 40px;
     }
 }
 

@@ -75,7 +75,15 @@ function toggleModalRegister(event){
   return false;
 }
 
+btnarenda=document.getElementById("btnarenda");
+if (btnarenda) btnarenda.addEventListener("click", toggleModalArenda);
+function toggleModalArenda(event){
+  toggleModal('arenda');
+  return false;
+}
+
 document.getElementsByClassName("closeblock2")[0].addEventListener("click", closeModals);
+document.querySelector("#arenda .btn").addEventListener("click", closeModals);
 function closeModals(event){
   toggleModal();
   return false;
@@ -90,11 +98,13 @@ function toggleModal(idModal=null){
       document.body.classList.remove('opensignin');
     if (document.body.classList.contains('openregister'))
       document.body.classList.remove('openregister');
+      if (document.body.classList.contains('openarenda'))
+        document.body.classList.remove('openarenda');
   }
 }
 
-document.querySelectorAll(".modal .btn")[0].addEventListener("click", authUser);
-document.querySelectorAll(".modal .btn")[1].addEventListener("click", authUser);
+document.querySelector("#signin .btn").addEventListener("click", authUser);
+document.querySelector("#register .btn").addEventListener("click", authUser);
 function authUser(event){
   form=event.target.closest("form");
   login=form.querySelector("input[name='login']").value;
@@ -144,3 +154,20 @@ function logout(event){
 }
 
 setAuth();
+
+slider=$(".slides").slick({
+  dots: false,
+  infinite: true,
+  speed: 600,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false
+});
+
+$(".btnprev").click(function(){
+  slider.slick("slickPrev");
+});
+
+$(".btnnext").click(function(){
+  slider.slick("slickNext");
+});
