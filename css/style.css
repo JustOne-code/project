@@ -608,3 +608,33 @@ footer .menu-item{
 }
 
 /* Профиль */
+
+/* Калькулятор */
+.container-calc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calc{
+    box-shadow: 0px 0px 15px rgba(212,192,132,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.calc label, p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.calc input,select{
+    margin: 10px 0;
+    font-size: 20px;
+    height: 50px;
+}
+
+/* Калькулятор */

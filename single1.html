@@ -10,10 +10,12 @@
     <link href="css/adaptive.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  
 </head>
 <body>
     <div class="ovh">
@@ -113,6 +115,24 @@
                 </div>
             </div>
         </section>
+
+        <section class="container-calc">
+            <div class="box-calc col-12 col-md-4">
+                <div class="calc p-4 mt-5">
+                    <h3 class="col-100">Расчёт стоимости</h3>
+                    <label class="col-100" for="">Количество дней/месяцев</label>
+                    <input type="number" min="1" value="1" step="1" class="form-control col-100" id="count">
+                    <label for="" class="col-100">Тип расчёта</label>
+                    <select class="form-control col-100" id="type-calc">
+                        <option value="День">День</option>
+                        <option value="Месяц">Месяц</option>
+                    </select>
+                    <input class="btn" type="button" value="Посчитать" onclick="calc();">
+                    <p class="display-4"><span id="final_price">0</span> Руб.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="form">
             <div class="container pr">
                 <div class="row aie"> 
@@ -247,5 +267,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/my.js"></script>
+    <script src="js/calc.js"></script>
 </body>
 </html> 
