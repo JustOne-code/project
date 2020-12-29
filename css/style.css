@@ -557,6 +557,8 @@ footer .menu-item{
 .profile-info{
     display: flex;
     padding-top: 20px;
+    justify-content: center;
+    align-items: center;
 
 }
 
